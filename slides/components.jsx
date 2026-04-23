@@ -259,7 +259,7 @@ function Slide2() {
                   <div style={{ fontFamily: FONT_MONO, fontSize: 22, letterSpacing: '0.15em', color: s.color, marginBottom: 20 }}>
                     {s.unit}
                   </div>
-                  <div style={{ fontSize: 104, fontWeight: 700, letterSpacing: '-0.03em', color: COLORS.text, lineHeight: 1 }}>
+                  <div style={{ fontSize: 104, fontWeight: 700, letterSpacing: '-0.03em', color: COLORS.text, lineHeight: 1, whiteSpace: 'nowrap' }}>
                     {s.num}
                   </div>
                 </div>
