@@ -215,7 +215,7 @@ function Slide1() {
               <div style={{ fontFamily: FONT_MONO, fontSize: 20, letterSpacing: '0.22em', color: COLORS.amber, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.Alert s={20} c={COLORS.amber} /> RETAIL
               </div>
-              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text, whiteSpace: 'nowrap' }}>
+              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text }}>
                 WhatsApp<span style={{ color: COLORS.textDim, fontSize: 44, fontWeight: 400 }}> tips</span>
               </div>
               <div style={{ fontSize: 30, color: COLORS.textDim, marginTop: 12 }}>

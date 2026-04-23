@@ -96,14 +96,12 @@
       opacity: 0;
       pointer-events: none;
       visibility: hidden;
-      transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-      transform: scale(0.98);
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     ::slotted([data-deck-active]) {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
-      transform: scale(1);
     }
 
     /* Tap zones for mobile — back/forward thirds like Stories.
