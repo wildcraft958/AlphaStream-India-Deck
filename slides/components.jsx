@@ -170,7 +170,7 @@ function Slide1() {
               <span style={{ width: 8, height: 8, background: COLORS.cyan, borderRadius: '50%', boxShadow: `0 0 12px ${COLORS.cyan}` }} />
               STREAMING · LIVE
             </div>
-            <div style={{ fontSize: 168, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.88 }}>
+            <div className="anim-el anim-slide-up" style={{ fontSize: 168, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.88 }}>
               Alpha<span style={{
                 background: `linear-gradient(135deg, ${COLORS.cyan}, ${COLORS.green})`,
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -179,10 +179,10 @@ function Slide1() {
             <div style={{ fontSize: 68, fontWeight: 300, letterSpacing: '0.2em', color: COLORS.textDim, marginTop: 8, marginBottom: 56 }}>
               INDIA
             </div>
-            <div style={{ fontSize: TYPE_SCALE.subtitle, lineHeight: 1.25, color: COLORS.text, maxWidth: 780, fontWeight: 400 }}>
+            <div className="anim-el anim-slide-up delay-1" style={{ fontSize: TYPE_SCALE.subtitle, lineHeight: 1.25, color: COLORS.text, maxWidth: 780, fontWeight: 400 }}>
               Real-time AI investment intelligence for the Indian retail investor.
             </div>
-            <div style={{ display: 'flex', gap: 56, marginTop: 72, fontFamily: FONT_MONO, fontSize: 26 }}>
+            <div className="anim-el anim-fade delay-2" style={{ display: 'flex', gap: 56, marginTop: 72, fontFamily: FONT_MONO, fontSize: 26 }}>
               <div>
                 <div style={{ color: COLORS.textFaint, fontSize: 20, letterSpacing: '0.2em', marginBottom: 8 }}>TEAM</div>
                 <div style={{ color: COLORS.text }}>NAMOFANS</div>
@@ -200,7 +200,7 @@ function Slide1() {
 
           {/* Right: contrast panel */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 100px 0 80px', gap: 40 }}>
-            <Card style={{ padding: 40 }}>
+            <Card className="anim-el anim-slide-right delay-2" style={{ padding: 40 }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 20, letterSpacing: '0.22em', color: COLORS.red, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.X s={20} c={COLORS.red} /> INSTITUTIONS
               </div>
@@ -211,18 +211,18 @@ function Slide1() {
                 Bloomberg-class terminals
               </div>
             </Card>
-            <Card style={{ padding: 40 }}>
+            <Card className="anim-el anim-slide-right delay-3" style={{ padding: 40 }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 20, letterSpacing: '0.22em', color: COLORS.amber, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.Alert s={20} c={COLORS.amber} /> RETAIL
               </div>
-              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text }}>
+              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text, whiteSpace: 'nowrap' }}>
                 WhatsApp<span style={{ color: COLORS.textDim, fontSize: 44, fontWeight: 400 }}> tips</span>
               </div>
               <div style={{ fontSize: 30, color: COLORS.textDim, marginTop: 12 }}>
                 Stale data · hallucinated bots
               </div>
             </Card>
-            <Card style={{ padding: '26px 32px', borderTop: `3px solid ${COLORS.cyan}` }}>
+            <Card className="anim-el anim-slide-right delay-4" style={{ padding: '26px 32px', borderTop: `3px solid ${COLORS.cyan}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, color: COLORS.cyan, fontFamily: FONT_MONO, fontSize: 24, letterSpacing: '0.08em' }}>
                 <Icon.Arrow s={22} c={COLORS.cyan} /> We close the gap.
               </div>
@@ -248,10 +248,10 @@ function Slide2() {
       <Body>
         <Title eyebrow="Problem · 01">An information gap at nation scale.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, flex: 1, minHeight: 0 }}>
-          {stats.map((s) => {
+          {stats.map((s, i) => {
             const IC = s.icon;
             return (
-              <Card key={s.unit} accent={s.color} style={{
+              <Card key={s.unit} accent={s.color} className={`anim-el anim-slide-up delay-${i + 1}`} style={{
                 padding: 36, display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
               }}>
                 <div>
@@ -270,7 +270,7 @@ function Slide2() {
             );
           })}
         </div>
-        <Card style={{
+        <Card className="anim-el anim-slide-up delay-5" style={{
           marginTop: 32, padding: '32px 40px', borderLeft: `3px solid ${COLORS.red}`,
           display: 'grid', gridTemplateColumns: '280px 1fr', gap: 44, alignItems: 'center', flexShrink: 0,
         }}>
@@ -300,7 +300,7 @@ function Slide3() {
       <Chrome n="03" section="SOLUTION / PARADIGM" />
       <Body>
         <Title eyebrow="Solution · 02">A live AI paradigm, not a chatbot wrapper.</Title>
-        <Card style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+        <Card className="anim-el anim-fade" style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr 1.3fr 1.4fr',
             borderBottom: `1px solid ${COLORS.line}`, background: 'rgba(255,255,255,0.02)',
@@ -319,7 +319,7 @@ function Slide3() {
             {rows.map((r, i) => {
               const Bi = r.bi, Gi = r.gi;
               return (
-                <div key={r.dim} style={{
+                <div key={r.dim} className={`anim-el anim-slide-right delay-${i + 1}`} style={{
                   display: 'grid', gridTemplateColumns: '1fr 1.3fr 1.4fr',
                   borderBottom: i < rows.length - 1 ? `1px solid ${COLORS.line}` : 'none',
                   flex: 1, alignItems: 'center',
@@ -360,7 +360,7 @@ function Slide4() {
             const IC = L.icon;
             return (
               <React.Fragment key={L.n}>
-                <Card style={{
+                <Card className={`anim-el anim-slide-up delay-${i + 1}`} style={{
                   flex: 1, padding: 32, display: 'flex', flexDirection: 'column',
                   borderTop: `3px solid ${L.color}`,
                   boxShadow: `0 0 60px -20px ${L.color}30`,
@@ -381,7 +381,7 @@ function Slide4() {
                   </div>
                 </Card>
                 {i < layers.length - 1 && (
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, color: COLORS.textFaint }}>
+                  <div className={`anim-el anim-fade delay-${i + 1}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, color: COLORS.textFaint }}>
                     <Icon.Arrow s={32} c={COLORS.textFaint} />
                   </div>
                 )}
@@ -389,7 +389,7 @@ function Slide4() {
             );
           })}
         </div>
-        <Card style={{
+        <Card className="anim-el anim-slide-up delay-6" style={{
           marginTop: 28, padding: '24px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           fontFamily: FONT_MONO, fontSize: 26, flexShrink: 0,
         }}>
@@ -430,7 +430,7 @@ function Slide5() {
         </div>
 
         {/* Mock terminal */}
-        <Card style={{
+        <Card className="anim-el anim-slide-up delay-1" style={{
           flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column',
           boxShadow: `0 0 0 1px ${COLORS.cyan}30, 0 40px 80px rgba(0,0,0,0.6)`,
         }}>
@@ -459,8 +459,8 @@ function Slide5() {
                   </linearGradient>
                 </defs>
                 {[40, 80, 120, 160, 200].map(y => <line key={y} x1="0" x2="600" y1={y} y2={y} stroke={COLORS.line} strokeWidth="1" />)}
-                <path d="M0,150 L40,140 L80,155 L120,120 L160,125 L200,100 L240,110 L280,85 L320,95 L360,70 L400,80 L440,60 L480,72 L520,45 L560,55 L600,38 L600,220 L0,220 Z" fill="url(#s5area)" />
-                <path d="M0,150 L40,140 L80,155 L120,120 L160,125 L200,100 L240,110 L280,85 L320,95 L360,70 L400,80 L440,60 L480,72 L520,45 L560,55 L600,38" fill="none" stroke={COLORS.cyan} strokeWidth="2" />
+                <path className="anim-el anim-fade delay-3" d="M0,150 L40,140 L80,155 L120,120 L160,125 L200,100 L240,110 L280,85 L320,95 L360,70 L400,80 L440,60 L480,72 L520,45 L560,55 L600,38 L600,220 L0,220 Z" fill="url(#s5area)" />
+                <path className="anim-el anim-draw delay-2" d="M0,150 L40,140 L80,155 L120,120 L160,125 L200,100 L240,110 L280,85 L320,95 L360,70 L400,80 L440,60 L480,72 L520,45 L560,55 L600,38" fill="none" stroke={COLORS.cyan} strokeWidth="2" />
                 {[[30,130,155,120],[80,150,170,140],[130,115,130,100],[180,95,120,85],[230,105,115,88],[280,80,100,72],[330,90,105,78],[380,65,85,58],[430,55,75,50],[480,65,75,55],[530,40,55,32],[580,35,50,28]].map((c,i) => {
                   const [x, o, l, h] = c; const up = h < o;
                   return (
@@ -483,7 +483,7 @@ function Slide5() {
                   <div key={l} style={{ display: 'grid', gridTemplateColumns: '100px 1fr 40px', gap: 12, alignItems: 'center' }}>
                     <span style={{ color: COLORS.textDim }}>{l}</span>
                     <span style={{ height: 6, background: COLORS.line, position: 'relative' }}>
-                      <span style={{ position: 'absolute', inset: 0, width: v + '%', background: `linear-gradient(90deg, ${COLORS.cyan}, ${COLORS.green})` }} />
+                      <span className="anim-el anim-grow-h delay-3" style={{ position: 'absolute', inset: 0, width: v + '%', background: `linear-gradient(90deg, ${COLORS.cyan}, ${COLORS.green})` }} />
                     </span>
                     <span style={{ color: COLORS.text }}>{v}</span>
                   </div>
@@ -494,7 +494,7 @@ function Slide5() {
         </Card>
 
         {/* Flow strip */}
-        <div style={{ marginTop: 24, display: 'flex', gap: 10, fontFamily: FONT_MONO, fontSize: 18, flexShrink: 0 }}>
+        <div className="anim-el anim-slide-up delay-4" style={{ marginTop: 24, display: 'flex', gap: 10, fontFamily: FONT_MONO, fontSize: 18, flexShrink: 0 }}>
           {['OVERVIEW', 'SIGNALS', 'GLOBAL INTEL', 'NLQ CHAT', 'SENTIMENT SHIFT'].map((step, i, arr) => (
             <React.Fragment key={step}>
               <div style={{
@@ -536,10 +536,10 @@ function Slide6() {
       <Body>
         <Title eyebrow="Moat · 05">Three things a wrapper cannot copy.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, flex: 1, minHeight: 0 }}>
-          {moats.map((m) => {
+          {moats.map((m, i) => {
             const IC = m.icon;
             return (
-              <Card key={m.label} style={{ padding: 40, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${m.color}`, boxShadow: `0 0 80px -30px ${m.color}50` }}>
+              <Card key={m.label} className={`anim-el anim-slide-up delay-${i + 1}`} style={{ padding: 40, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${m.color}`, boxShadow: `0 0 80px -30px ${m.color}50` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
                   <IC s={32} c={m.color} />
                   <div style={{ fontFamily: FONT_MONO, fontSize: 22, letterSpacing: '0.22em', color: m.color }}>{m.label}</div>
@@ -611,14 +611,14 @@ function Slide7() {
               <span style={{ textAlign: 'right' }}>WEIGHT</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              {weights.map(w => (
+              {weights.map((w, i) => (
                 <div key={w.name} style={{ display: 'grid', gridTemplateColumns: '280px 1fr 80px', gap: 28, alignItems: 'center' }}>
                   <div style={{ fontFamily: FONT_MONO, letterSpacing: '0.05em', lineHeight: 1.2 }}>
                     <div style={{ fontSize: 22, color: COLORS.text }}>{w.name}</div>
                     <div style={{ fontSize: 18, color: COLORS.textFaint, marginTop: 4 }}>{w.desc}</div>
                   </div>
                   <div style={{ height: 20, background: 'rgba(255,255,255,0.04)', border: `1px solid ${COLORS.panelBorder}`, position: 'relative' }}>
-                    <div style={{ position: 'absolute', inset: 0, width: (w.w / maxW * 100) + '%', background: `linear-gradient(90deg, ${w.color}30, ${w.color})`, boxShadow: `0 0 20px ${w.color}60` }} />
+                    <div className={`anim-el anim-grow-h delay-${i + 1}`} style={{ position: 'absolute', inset: 0, width: (w.w / maxW * 100) + '%', background: `linear-gradient(90deg, ${w.color}30, ${w.color})`, boxShadow: `0 0 20px ${w.color}60` }} />
                   </div>
                   <div style={{ fontFamily: FONT_MONO, fontSize: 36, fontWeight: 700, color: w.color, textAlign: 'right', letterSpacing: '-0.02em' }}>{w.w.toFixed(2)}</div>
                 </div>
@@ -627,7 +627,7 @@ function Slide7() {
           </div>
 
           {/* RIGHT: score gauge */}
-          <Card style={{ padding: 44, display: 'flex', flexDirection: 'column' }}>
+          <Card className="anim-el anim-fade delay-3" style={{ padding: 44, display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
               <Icon.Target s={22} c={COLORS.cyan} /> ALPHA SCORE
             </div>
@@ -679,7 +679,7 @@ function Slide8() {
         <Title eyebrow="Impact · 07">Time saved. Alpha earned.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, flex: 1, minHeight: 0 }}>
           {/* Time card */}
-          <Card style={{ padding: 56, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${COLORS.cyan}`, boxShadow: `0 0 80px -30px ${COLORS.cyan}50` }}>
+          <Card className="anim-el anim-slide-up delay-1" style={{ padding: 56, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${COLORS.cyan}`, boxShadow: `0 0 80px -30px ${COLORS.cyan}50` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
               <Icon.Clock s={30} c={COLORS.cyan} />
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em' }}>RECOVERED PRODUCTIVITY</div>
@@ -704,7 +704,7 @@ function Slide8() {
           </Card>
 
           {/* Alpha card */}
-          <Card style={{ padding: 56, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${COLORS.green}`, boxShadow: `0 0 80px -30px ${COLORS.green}50` }}>
+          <Card className="anim-el anim-slide-up delay-2" style={{ padding: 56, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${COLORS.green}`, boxShadow: `0 0 80px -30px ${COLORS.green}50` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
               <Icon.Trend s={30} c={COLORS.green} />
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.green, letterSpacing: '0.22em' }}>POTENTIAL ALPHA</div>
@@ -725,7 +725,7 @@ function Slide8() {
           </Card>
         </div>
 
-        <Card style={{
+        <Card className="anim-el anim-slide-up delay-3" style={{
           marginTop: 28, padding: '28px 40px', borderLeft: `3px solid ${COLORS.amber}`,
           display: 'grid', gridTemplateColumns: '320px 1fr', gap: 40, alignItems: 'center', flexShrink: 0,
         }}>
@@ -756,8 +756,8 @@ function Slide9() {
 
         {/* Bar chart */}
         <div style={{ flex: 1, minHeight: 0, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
-          {rows.map((r) => (
-            <Card key={r.y} style={{ padding: 36, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${r.color}` }}>
+          {rows.map((r, i) => (
+            <Card key={r.y} className={`anim-el anim-fade delay-${i + 1}`} style={{ padding: 36, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${r.color}` }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: r.color, letterSpacing: '0.22em', marginBottom: 18 }}>
                 {r.y}
               </div>
@@ -768,7 +768,7 @@ function Slide9() {
               {/* Growing bar */}
               <div style={{ flex: 1, display: 'flex', alignItems: 'flex-end', marginTop: 32 }}>
                 <div style={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.03)', border: `1px solid ${COLORS.panelBorder}`, position: 'relative' }}>
-                  <div style={{
+                  <div className={`anim-el anim-grow-v delay-${i + 1}`} style={{
                     position: 'absolute', bottom: 0, left: 0, right: 0,
                     height: (r.mult * 100) + '%',
                     background: `linear-gradient(180deg, ${r.color}, ${r.color}60)`,
@@ -788,13 +788,13 @@ function Slide9() {
         </div>
 
         <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 28, flexShrink: 0 }}>
-          <Card style={{ padding: '24px 32px' }}>
+          <Card className="anim-el anim-slide-right delay-4" style={{ padding: '24px 32px' }}>
             <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textFaint, letterSpacing: '0.15em', marginBottom: 10 }}>MODEL ASSUMPTIONS</div>
             <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.text, lineHeight: 1.6 }}>
               ₹999/mo premium tier · SOM 1.5L users (0.5% of active traders)
             </div>
           </Card>
-          <Card style={{ padding: '24px 32px', borderLeft: `3px solid ${COLORS.green}` }}>
+          <Card className="anim-el anim-slide-right delay-5" style={{ padding: '24px 32px', borderLeft: `3px solid ${COLORS.green}` }}>
             <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.green, letterSpacing: '0.15em', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
               <Icon.Check s={18} c={COLORS.green} /> ET MARKETS SAVINGS
             </div>
@@ -810,7 +810,7 @@ function Slide9() {
 
 // ======= SLIDE 10 =======
 function Slide10() {
-  const team = ['Raj Gupta and Kumari Animesh', 'Devansh', 'Monika'];
+  const team = ['Animesh Raj', 'Devansh Gupta', 'Monika Kumari'];
   return (
     <Frame>
       <Chrome n="10" section="END / OPEN FOR Q&A" />
@@ -821,7 +821,7 @@ function Slide10() {
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 24 }}>
                 ▸ SESSION CLOSING · 09
               </div>
-              <h1 style={{ margin: 0, fontSize: 124, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
+              <h1 className="anim-el anim-slide-up" style={{ margin: 0, fontSize: 124, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
                 Open for<br/>architectural<br/>
                 <span style={{ background: `linear-gradient(135deg, ${COLORS.cyan}, ${COLORS.green})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>review.</span>
               </h1>
@@ -832,7 +832,7 @@ function Slide10() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            <Card style={{ padding: 36, borderTop: `3px solid ${COLORS.cyan}` }}>
+            <Card className="anim-el anim-slide-right delay-1" style={{ padding: 36, borderTop: `3px solid ${COLORS.cyan}` }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.Github s={22} c={COLORS.cyan} /> REPOSITORY
               </div>
@@ -842,7 +842,7 @@ function Slide10() {
               </div>
             </Card>
 
-            <Card style={{ padding: 36, flex: 1, borderTop: `3px solid ${COLORS.green}` }}>
+            <Card className="anim-el anim-slide-right delay-2" style={{ padding: 36, flex: 1, borderTop: `3px solid ${COLORS.green}` }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.green, letterSpacing: '0.22em', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.Users s={22} c={COLORS.green} /> TEAM NAMOFANS
               </div>
@@ -854,7 +854,7 @@ function Slide10() {
               ))}
             </Card>
 
-            <Card style={{ padding: '22px 32px', border: `1px solid ${COLORS.cyan}`, background: 'rgba(34,211,238,0.06)' }}>
+            <Card className="anim-el anim-fade delay-3" style={{ padding: '22px 32px', border: `1px solid ${COLORS.cyan}`, background: 'rgba(34,211,238,0.06)' }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 24, color: COLORS.cyan, letterSpacing: '0.1em', textAlign: 'center' }}>
                 &gt; awaiting_jury_input_<span style={{ display: 'inline-block', width: 12, height: 20, marginLeft: 6, background: COLORS.cyan, verticalAlign: 'middle', animation: 'blink 1s steps(2) infinite' }} />
               </div>
