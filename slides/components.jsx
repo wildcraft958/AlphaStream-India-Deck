@@ -76,7 +76,7 @@ function Chrome({ n, section }) {
         fontFamily: FONT_MONO, fontSize: 17, color: COLORS.textFaint, letterSpacing: '0.08em', zIndex: 10,
         whiteSpace: 'nowrap',
       }}>
-        <span>TEAM ALETHEIA</span>
+        <span>TEAM NAMOFANS</span>
         <span style={{ margin: '0 14px' }}>·</span>
         <span>PS-06 · AI FOR THE INDIAN INVESTOR</span>
         <span style={{ marginLeft: 'auto', color: COLORS.cyan }}>github.com/wildcraft958/AlphaStream_India</span>
@@ -810,7 +810,7 @@ function Slide9() {
 
 // ======= SLIDE 10 =======
 function Slide10() {
-  const team = ['Animesh', 'Devansh', 'Monika'];
+  const team = ['Raj Gupta and Kumari Animesh', 'Devansh', 'Monika'];
   return (
     <Frame>
       <Chrome n="10" section="END / OPEN FOR Q&A" />
