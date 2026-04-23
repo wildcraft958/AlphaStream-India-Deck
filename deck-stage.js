@@ -93,18 +93,16 @@
       height: 100% !important;
       box-sizing: border-box !important;
       overflow: hidden;
-      opacity: 0;
       pointer-events: none;
       visibility: hidden;
-      transform: translateX(40px);
-      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;
+      transform: translateX(60px);
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.45s;
     }
     ::slotted([data-deck-active]) {
-      opacity: 1;
       pointer-events: auto;
       visibility: visible;
       transform: translateX(0);
-      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0s;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0s;
     }
 
     /* Tap zones for mobile — back/forward thirds like Stories.
