@@ -627,7 +627,7 @@ function Slide7() {
           </div>
 
           {/* RIGHT: score gauge */}
-          <Card className="anim-el anim-fade delay-3" style={{ padding: 44, display: 'flex', flexDirection: 'column' }}>
+          <Card className="anim-el anim-fade delay-3" style={{ padding: 44, display: 'flex', flexDirection: 'column', alignSelf: 'center' }}>
             <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
               <Icon.Target s={22} c={COLORS.cyan} /> ALPHA SCORE
             </div>
