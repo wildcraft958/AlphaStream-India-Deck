@@ -63,7 +63,7 @@ function Chrome({ n, section }) {
         <span style={{ margin: '0 12px', color: 'rgba(255,255,255,0.1)' }}>/</span>
         <span style={{ whiteSpace: 'nowrap' }}>{section}</span>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 22, whiteSpace: 'nowrap', flexShrink: 0 }}>
-          <span style={{ whiteSpace: 'nowrap' }}><span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: COLORS.green, marginRight: 8, boxShadow: `0 0 10px ${COLORS.green}` }} />LIVE</span>
+          <span style={{ whiteSpace: 'nowrap' }}><span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: COLORS.green, marginRight: 8, boxShadow: `0 0 10px ${COLORS.green}`, animation: 'blink-smooth 2s ease-in-out infinite alternate' }} />LIVE</span>
           <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>ET GENAI · 26 APR 2026</span>
           <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>{n}/10</span>
         </div>
@@ -627,13 +627,13 @@ function Slide7() {
           </div>
 
           {/* RIGHT: score gauge */}
-          <Card className="anim-el anim-fade delay-3" style={{ padding: 44, display: 'flex', flexDirection: 'column', alignSelf: 'center' }}>
-            <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
+          <Card className="anim-el anim-fade delay-3" style={{ padding: '36px 44px', display: 'flex', flexDirection: 'column', alignSelf: 'center', maxWidth: 640 }}>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.cyan, letterSpacing: '0.22em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
               <Icon.Target s={22} c={COLORS.cyan} /> ALPHA SCORE
             </div>
             {/* Arc gauge */}
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '2 / 1', marginTop: 8 }}>
-              <svg viewBox="0 0 200 110" style={{ width: '100%', height: '100%' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '2 / 1', marginTop: 0 }}>
+              <svg viewBox="0 0 200 110" style={{ width: '85%', height: 'auto', margin: '0 auto', display: 'block' }}>
                 <defs>
                   <linearGradient id="gaugeGrad" x1="0" x2="1" y1="0" y2="0">
                     <stop offset="0%" stopColor={COLORS.red} />
@@ -641,8 +641,8 @@ function Slide7() {
                     <stop offset="100%" stopColor={COLORS.green} />
                   </linearGradient>
                 </defs>
-                <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke={COLORS.line} strokeWidth="14" />
-                <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke="url(#gaugeGrad)" strokeWidth="14"
+                <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke={COLORS.line} strokeWidth="12" />
+                <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke="url(#gaugeGrad)" strokeWidth="12"
                   strokeDasharray="283" strokeDashoffset={283 * (1 - 0.82)} strokeLinecap="round" />
                 {/* Tick marks */}
                 {[0, 0.25, 0.5, 0.75, 1].map(t => {
@@ -653,14 +653,14 @@ function Slide7() {
                 })}
               </svg>
             </div>
-            <div style={{ textAlign: 'center', marginTop: -20 }}>
-              <div style={{ fontSize: 140, fontWeight: 700, color: COLORS.green, lineHeight: 1, letterSpacing: '-0.04em' }}>
-                82<span style={{ fontSize: 52, color: COLORS.textDim, fontWeight: 400 }}>/100</span>
+            <div style={{ textAlign: 'center', marginTop: -24 }}>
+              <div style={{ fontSize: 120, fontWeight: 700, color: COLORS.green, lineHeight: 1, letterSpacing: '-0.04em' }}>
+                82<span style={{ fontSize: 44, color: COLORS.textDim, fontWeight: 400 }}>/100</span>
               </div>
-              <div style={{ fontFamily: FONT_MONO, fontSize: 26, color: COLORS.green, letterSpacing: '0.18em', marginTop: 10 }}>STRONG BUY</div>
+              <div style={{ fontFamily: FONT_MONO, fontSize: 24, color: COLORS.green, letterSpacing: '0.18em', marginTop: 4 }}>STRONG BUY</div>
             </div>
-            <div style={{ height: 1, background: COLORS.line, margin: '28px 0 20px' }} />
-            <div style={{ fontSize: 24, color: COLORS.textDim, lineHeight: 1.45 }}>
+            <div style={{ height: 1, background: COLORS.line, margin: '24px 0 18px' }} />
+            <div style={{ fontSize: 22, color: COLORS.textDim, lineHeight: 1.4 }}>
               The Decision Agent fuses 13 independent signals, preventing single-point failure and mode collapse.
             </div>
           </Card>

@@ -179,7 +179,8 @@
       align-items: center;
       justify-content: center;
       background: #020617;
-      padding: 32px 32px 32px 16px;
+      padding: 32px;
+      overflow: hidden;
     }
 
     .canvas {
@@ -191,6 +192,7 @@
       border-radius: 40px;
       overflow: hidden;
       box-shadow: 0 40px 100px -20px rgba(0,0,0,0.8);
+      aspect-ratio: 16 / 9;
     }
 
     ::slotted(*) {
@@ -206,6 +208,10 @@
     ::slotted([data-deck-active]) {
       pointer-events: auto;
       visibility: visible;
+    }
+    @keyframes blink-smooth {
+      0% { opacity: 1; }
+      100% { opacity: 0.3; }
     }
 
     /* Tap zones for mobile — back/forward thirds like Stories.
@@ -685,8 +691,12 @@
       }
       const stage = this._root.querySelector('.stage');
       if (!stage) return;
-      const sw = stage.clientWidth;
-      const sh = stage.clientHeight;
+
+      // UsegetBoundingClientRect for more precision on scaled layouts
+      const rect = stage.getBoundingClientRect();
+      const sw = rect.width - 64; // subtract padding
+      const sh = rect.height - 64;
+      
       const s = Math.min(sw / this.designWidth, sh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
     }
