@@ -562,11 +562,11 @@ function Slide6() {
                   </div>
                 )}
                 {m.viz === 'graph' && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 28, fontFamily: FONT_MONO, fontSize: 15, flexWrap: 'wrap' }}>
-                    {['Guard', 'Route', 'SQL', 'Exec', 'Fix', 'Narr'].map((s, i, a) => (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 2, marginTop: 28, fontFamily: FONT_MONO, fontSize: 16, flexWrap: 'nowrap' }}>
+                    {['Guard', 'Route', 'SQL', 'Exec', 'Fix', 'Narrate'].map((s, i, a) => (
                       <React.Fragment key={s}>
-                        <span style={{ padding: '6px 10px', border: `1px solid ${m.color}80`, color: m.color, letterSpacing: '0.06em' }}>{s}</span>
-                        {i < a.length - 1 && <span style={{ color: COLORS.textFaint }}>›</span>}
+                        <div style={{ padding: '4px 8px', border: `1px solid ${m.color}60`, color: m.color, letterSpacing: '0.04em', background: `${m.color}08`, whiteSpace: 'nowrap' }}>{s}</div>
+                        {i < a.length - 1 && <span style={{ color: COLORS.textFaint, fontSize: 12 }}>▶</span>}
                       </React.Fragment>
                     ))}
                   </div>
@@ -643,6 +643,7 @@ function Slide7() {
                 </defs>
                 <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke={COLORS.line} strokeWidth="12" />
                 <path d="M 10 100 A 90 90 0 0 1 190 100" fill="none" stroke="url(#gaugeGrad)" strokeWidth="12"
+                  className="anim-gauge"
                   strokeDasharray="283" strokeDashoffset={283 * (1 - 0.82)} strokeLinecap="round" />
                 {/* Tick marks */}
                 {[0, 0.25, 0.5, 0.75, 1].map(t => {

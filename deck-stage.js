@@ -374,6 +374,9 @@
       }
       .overlay, .tapzones { display: none !important; }
     }
+    @keyframes gauge-draw {
+      from { stroke-dashoffset: 283; }
+    }
   `;
 
   class DeckStage extends HTMLElement {

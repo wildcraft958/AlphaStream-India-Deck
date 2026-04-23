@@ -44,6 +44,13 @@
   @keyframes grow-h { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
   @keyframes grow-v { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
   @keyframes draw-line { to { stroke-dashoffset: 0; } }
+  @keyframes gauge-draw {
+    from { stroke-dashoffset: 283; }
+  }
+  section[data-deck-active] .anim-gauge {
+    animation: gauge-draw 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.6s;
+  }
 </style>
 
 <script type="application/json" id="speaker-notes">
