@@ -199,13 +199,13 @@ function Slide1() {
           </div>
 
           {/* Right: contrast panel */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 40px 0 48px', gap: 32, minWidth: 0 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 100px 0 80px', gap: 40 }}>
             <Card className="anim-el anim-slide-right delay-2" style={{ padding: 40 }}>
               <div style={{ fontFamily: FONT_MONO, fontSize: 20, letterSpacing: '0.22em', color: COLORS.red, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.X s={20} c={COLORS.red} /> INSTITUTIONS
               </div>
-              <div style={{ fontSize: 80, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text, whiteSpace: 'nowrap' }}>
-                $32,000<span style={{ color: COLORS.textDim, fontSize: 38, fontWeight: 400 }}> /yr</span>
+              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text }}>
+                $32,000<span style={{ color: COLORS.textDim, fontSize: 44, fontWeight: 400 }}> /yr</span>
               </div>
               <div style={{ fontSize: 30, color: COLORS.textDim, marginTop: 12 }}>
                 Bloomberg-class terminals
@@ -215,8 +215,8 @@ function Slide1() {
               <div style={{ fontFamily: FONT_MONO, fontSize: 20, letterSpacing: '0.22em', color: COLORS.amber, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Icon.Alert s={20} c={COLORS.amber} /> RETAIL
               </div>
-              <div style={{ fontSize: 80, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text, whiteSpace: 'nowrap' }}>
-                WhatsApp<span style={{ color: COLORS.textDim, fontSize: 38, fontWeight: 400 }}> tips</span>
+              <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: COLORS.text }}>
+                WhatsApp<span style={{ color: COLORS.textDim, fontSize: 44, fontWeight: 400 }}> tips</span>
               </div>
               <div style={{ fontSize: 30, color: COLORS.textDim, marginTop: 12 }}>
                 Stale data · hallucinated bots

@@ -61,19 +61,107 @@
     :host {
       position: fixed;
       inset: 0;
-      display: block;
-      background: #000;
+      display: flex;
+      background: #060910;
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
       overflow: hidden;
     }
 
-    .stage {
-      position: absolute;
-      inset: 0;
+    .sidebar {
+      width: 300px;
+      flex-shrink: 0;
+      background: #0B1120;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 0;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255,255,255,0.05);
+      z-index: 100;
+    }
+
+    .sidebar-header {
+      padding: 0 32px 40px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sidebar-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #22d3ee, #10b981);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    .sidebar-title {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .sidebar-subtitle {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.12em;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0 16px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.45);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+
+    .nav-item:hover {
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .nav-item.active {
+      color: #000;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .nav-item .index {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+
+    .nav-item.active .index {
+      opacity: 0.7;
+    }
+
+    .stage {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #060910;
+      padding: 40px;
     }
 
     .canvas {
@@ -82,10 +170,11 @@
       flex-shrink: 0;
       background: #fff;
       will-change: transform;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 30px 90px rgba(0,0,0,0.6);
     }
 
-    /* Slides live in light DOM (via <slot>) so authored CSS still applies.
-       We absolutely position each slotted child to stack them. */
     ::slotted(*) {
       position: absolute !important;
       inset: 0 !important;
@@ -95,14 +184,10 @@
       overflow: hidden;
       pointer-events: none;
       visibility: hidden;
-      transform: translateX(60px);
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.45s;
     }
     ::slotted([data-deck-active]) {
       pointer-events: auto;
       visibility: visible;
-      transform: translateX(0);
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0s;
     }
 
     /* Tap zones for mobile — back/forward thirds like Stories.
@@ -328,6 +413,25 @@
       const style = document.createElement('style');
       style.textContent = stylesheet;
 
+      // Sidebar
+      const sidebar = document.createElement('div');
+      sidebar.className = 'sidebar export-hidden';
+      sidebar.innerHTML = `
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="sidebar-title">AlphaStream</div>
+            <div class="sidebar-subtitle">Finale Deck</div>
+          </div>
+        </div>
+        <div class="nav-list"></div>
+      `;
+      this._navList = sidebar.querySelector('.nav-list');
+
       const stage = document.createElement('div');
       stage.className = 'stage';
 
@@ -379,7 +483,7 @@
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
 
-      this._root.append(style, stage, tapzones, overlay);
+      this._root.append(style, sidebar, stage, tapzones, overlay);
       this._canvas = canvas;
       this._slot = slot;
       this._overlay = overlay;
@@ -420,6 +524,9 @@
         return tag !== 'TEMPLATE' && tag !== 'SCRIPT' && tag !== 'STYLE';
       });
 
+      if (this._navList) this._navList.innerHTML = '';
+      this._navItems = [];
+
       this._slides.forEach((slide, i) => {
         const n = i + 1;
         // Determine a label for comment flow: prefer explicit data-label,
@@ -436,8 +543,16 @@
           const h = slide.querySelector('h1, h2, h3, [data-title]');
           if (h) label = (h.textContent || '').trim().slice(0, 40);
         }
-        if (!label) label = 'Slide';
+        if (!label) label = 'Slide ' + n;
         slide.setAttribute('data-screen-label', `${pad2(n)} ${label}`);
+
+        // Create nav item
+        const item = document.createElement('div');
+        item.className = 'nav-item';
+        item.innerHTML = `<span class="index">${pad2(n)}</span> <span class="label">${label}</span>`;
+        item.addEventListener('click', () => this._go(i, 'click'));
+        this._navList.appendChild(item);
+        this._navItems.push(item);
 
         // Validation attribute for comment flow / auto-checks.
         if (!slide.hasAttribute('data-om-validate')) {
@@ -482,17 +597,24 @@
 
     _applyIndex({ showOverlay = true, broadcast = true, reason = 'init' } = {}) {
       if (!this._slides.length) return;
-      const prev = this._prevIndex == null ? -1 : this._prevIndex;
       const curr = this._index;
+
       this._slides.forEach((s, i) => {
         if (i === curr) s.setAttribute('data-deck-active', '');
         else s.removeAttribute('data-deck-active');
       });
+
+      if (this._navItems) {
+        this._navItems.forEach((item, i) => {
+          if (i === curr) item.classList.add('active');
+          else item.classList.remove('active');
+        });
+      }
+
       if (this._countEl) this._countEl.textContent = String(curr + 1);
       this._persistIndex();
 
       if (broadcast) {
-        // (1) Legacy: host-window postMessage for speaker-notes renderers.
         try { window.postMessage({ slideIndexChanged: curr }, '*'); } catch (e) {}
 
         // (2) In-page CustomEvent on the <deck-stage> element itself.
