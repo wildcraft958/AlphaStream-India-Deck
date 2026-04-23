@@ -62,96 +62,114 @@
       position: fixed;
       inset: 0;
       display: flex;
-      background: #060910;
+      background: #020617;
       color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       overflow: hidden;
     }
 
     .sidebar {
-      width: 300px;
+      width: 260px;
       flex-shrink: 0;
-      background: #0B1120;
+      background: #020617;
       display: flex;
       flex-direction: column;
       padding: 40px 0;
-      overflow-y: auto;
-      border-right: 1px solid rgba(255,255,255,0.05);
+      overflow: hidden;
+      border-right: 1px solid rgba(255,255,255,0.03);
       z-index: 100;
     }
 
     .sidebar-header {
-      padding: 0 32px 40px 32px;
+      padding: 0 24px 48px 32px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .sidebar-logo {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, #22d3ee, #10b981);
-      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      color: #22d3ee;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
     }
 
     .sidebar-title {
-      font-weight: 700;
-      font-size: 20px;
+      font-weight: 800;
+      font-size: 19px;
       letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1;
     }
 
     .sidebar-subtitle {
       font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
       margin-top: 4px;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .nav-list {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      padding: 0 16px;
+      gap: 2px;
+      padding: 0 12px;
+      overflow-y: auto;
     }
 
     .nav-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 14px 20px;
+      gap: 16px;
+      padding: 12px 20px;
       border-radius: 12px;
       cursor: pointer;
-      color: rgba(255,255,255,0.45);
-      font-size: 15px;
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
       font-weight: 500;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid transparent;
     }
 
     .nav-item:hover {
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.8);
       background: rgba(255,255,255,0.03);
     }
 
     .nav-item.active {
-      color: #000;
+      color: #0891b2;
       background: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
     }
 
-    .nav-item .index {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 12px;
-      opacity: 0.5;
+    .nav-item svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+      stroke-width: 1.5;
     }
 
-    .nav-item.active .index {
-      opacity: 0.7;
+    .nav-item.active svg {
+      opacity: 1;
+      color: #0891b2;
+    }
+
+    .sidebar-footer {
+      padding: 24px 32px 0 32px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
     }
 
     .stage {
@@ -160,8 +178,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #060910;
-      padding: 40px;
+      background: #020617;
+      padding: 32px 32px 32px 16px;
     }
 
     .canvas {
@@ -170,9 +188,9 @@
       flex-shrink: 0;
       background: #fff;
       will-change: transform;
-      border-radius: 20px;
+      border-radius: 40px;
       overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 30px 90px rgba(0,0,0,0.6);
+      box-shadow: 0 40px 100px -20px rgba(0,0,0,0.8);
     }
 
     ::slotted(*) {
@@ -419,8 +437,8 @@
       sidebar.innerHTML = `
         <div class="sidebar-header">
           <div class="sidebar-logo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
           </div>
           <div>
@@ -429,6 +447,11 @@
           </div>
         </div>
         <div class="nav-list"></div>
+        <div class="sidebar-footer">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       `;
       this._navList = sidebar.querySelector('.nav-list');
 
@@ -527,18 +550,22 @@
       if (this._navList) this._navList.innerHTML = '';
       this._navItems = [];
 
+      const ICONS = [
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>'
+      ];
+
       this._slides.forEach((slide, i) => {
         const n = i + 1;
-        // Determine a label for comment flow: prefer explicit data-label,
-        // then an existing data-screen-label, then first heading, else "Slide".
         let label = slide.getAttribute('data-label');
-        if (!label) {
-          const existing = slide.getAttribute('data-screen-label');
-          if (existing) {
-            // Strip any leading number the author may have included.
-            label = existing.replace(/^\s*\d+\s*/, '').trim() || existing;
-          }
-        }
         if (!label) {
           const h = slide.querySelector('h1, h2, h3, [data-title]');
           if (h) label = (h.textContent || '').trim().slice(0, 40);
@@ -546,15 +573,14 @@
         if (!label) label = 'Slide ' + n;
         slide.setAttribute('data-screen-label', `${pad2(n)} ${label}`);
 
-        // Create nav item
         const item = document.createElement('div');
         item.className = 'nav-item';
-        item.innerHTML = `<span class="index">${pad2(n)}</span> <span class="label">${label}</span>`;
+        const icon = ICONS[i % ICONS.length];
+        item.innerHTML = `${icon} <span class="label">${label}</span>`;
         item.addEventListener('click', () => this._go(i, 'click'));
         this._navList.appendChild(item);
         this._navItems.push(item);
 
-        // Validation attribute for comment flow / auto-checks.
         if (!slide.hasAttribute('data-om-validate')) {
           slide.setAttribute('data-om-validate', VALIDATE_ATTR);
         }
@@ -597,6 +623,7 @@
 
     _applyIndex({ showOverlay = true, broadcast = true, reason = 'init' } = {}) {
       if (!this._slides.length) return;
+      const prev = this._prevIndex == null ? -1 : this._prevIndex;
       const curr = this._index;
 
       this._slides.forEach((s, i) => {
@@ -652,16 +679,15 @@
 
     _fit() {
       if (!this._canvas) return;
-      // PPTX export sets noscale so the DOM capture sees authored-size
-      // geometry — the scaled canvas is in shadow DOM, so the exporter's
-      // resetTransformSelector can't reach .canvas.style.transform directly.
       if (this.hasAttribute('noscale')) {
         this._canvas.style.transform = 'none';
         return;
       }
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      const s = Math.min(vw / this.designWidth, vh / this.designHeight);
+      const stage = this._root.querySelector('.stage');
+      if (!stage) return;
+      const sw = stage.clientWidth;
+      const sh = stage.clientHeight;
+      const s = Math.min(sw / this.designWidth, sh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
     }
 
