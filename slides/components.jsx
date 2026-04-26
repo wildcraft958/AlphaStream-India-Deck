@@ -581,7 +581,7 @@ function Slide6() {
         </div>
 
         <Card className="anim-el anim-fade delay-4" style={{
-          marginTop: 'auto', padding: '28px 36px', flexShrink: 0,
+          marginTop: 'auto', marginBottom: 'auto', padding: '28px 36px', flexShrink: 0,
           border: `1px solid ${COLORS.violet}`, background: 'rgba(167,139,250,0.06)',
           display: 'flex', alignItems: 'center', gap: 24,
         }}>
