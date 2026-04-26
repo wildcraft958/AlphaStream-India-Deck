@@ -539,42 +539,42 @@ function Slide6() {
           {moats.map((m, i) => {
             const IC = m.icon;
             return (
-              <Card key={m.label} className={`anim-el anim-slide-up delay-${i + 1}`} style={{ padding: 40, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${m.color}`, boxShadow: `0 0 80px -30px ${m.color}50` }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
-                  <IC s={32} c={m.color} />
-                  <div style={{ fontFamily: FONT_MONO, fontSize: 22, letterSpacing: '0.22em', color: m.color }}>{m.label}</div>
+              <Card key={m.label} className={`anim-el anim-slide-up delay-${i + 1}`} style={{ padding: 28, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${m.color}`, boxShadow: `0 0 80px -30px ${m.color}50` }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
+                  <IC s={26} c={m.color} />
+                  <div style={{ fontFamily: FONT_MONO, fontSize: 18, letterSpacing: '0.22em', color: m.color }}>{m.label}</div>
                 </div>
-                <div style={{ fontSize: 128, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.9, color: m.color }}>{m.metric}</div>
-                <div style={{ fontFamily: FONT_MONO, fontSize: 24, color: COLORS.textDim, marginTop: 12 }}>{m.sub}</div>
+                <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.9, color: m.color }}>{m.metric}</div>
+                <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textDim, marginTop: 8 }}>{m.sub}</div>
 
                 {m.viz === 'rag' && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 28, fontFamily: FONT_MONO, fontSize: 20 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16, fontFamily: FONT_MONO, fontSize: 17 }}>
                     {[2, 4, 8].map((n, i) => (
                       <React.Fragment key={n}>
                         <div style={{
-                          padding: '10px 14px', border: `1px solid ${m.color}80`, color: m.color,
+                          padding: '8px 12px', border: `1px solid ${m.color}80`, color: m.color,
                           background: `rgba(255,176,32,0.05)`, letterSpacing: '0.08em',
                           opacity: 0.55 + i * 0.22,
                         }}>{n} DOCS</div>
-                        {i < 2 && <Icon.Arrow s={18} c={COLORS.textFaint} />}
+                        {i < 2 && <Icon.Arrow s={16} c={COLORS.textFaint} />}
                       </React.Fragment>
                     ))}
                   </div>
                 )}
                 {m.viz === 'graph' && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 2, marginTop: 28, fontFamily: FONT_MONO, fontSize: 16, flexWrap: 'nowrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 2, marginTop: 16, fontFamily: FONT_MONO, fontSize: 14, flexWrap: 'nowrap' }}>
                     {['Guard', 'Route', 'SQL', 'Exec', 'Fix', 'Narrate'].map((s, i, a) => (
                       <React.Fragment key={s}>
-                        <div style={{ padding: '4px 8px', border: `1px solid ${m.color}60`, color: m.color, letterSpacing: '0.04em', background: `${m.color}08`, whiteSpace: 'nowrap' }}>{s}</div>
-                        {i < a.length - 1 && <span style={{ color: COLORS.textFaint, fontSize: 12 }}>▶</span>}
+                        <div style={{ padding: '4px 7px', border: `1px solid ${m.color}60`, color: m.color, letterSpacing: '0.04em', background: `${m.color}08`, whiteSpace: 'nowrap' }}>{s}</div>
+                        {i < a.length - 1 && <span style={{ color: COLORS.textFaint, fontSize: 11 }}>▶</span>}
                       </React.Fragment>
                     ))}
                   </div>
                 )}
 
-                <div style={{ height: 1, background: COLORS.line, margin: '32px 0 24px' }} />
-                <div style={{ fontSize: 30, fontWeight: 600, color: COLORS.text, marginBottom: 14, lineHeight: 1.15 }}>{m.title}</div>
-                <div style={{ fontSize: 24, color: COLORS.textDim, lineHeight: 1.45 }}>{m.body}</div>
+                <div style={{ height: 1, background: COLORS.line, margin: '20px 0 16px' }} />
+                <div style={{ fontSize: 24, fontWeight: 600, color: COLORS.text, marginBottom: 10, lineHeight: 1.15 }}>{m.title}</div>
+                <div style={{ fontSize: 19, color: COLORS.textDim, lineHeight: 1.4 }}>{m.body}</div>
               </Card>
             );
           })}
