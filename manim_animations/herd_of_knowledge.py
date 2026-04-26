@@ -113,9 +113,9 @@ class HerdOfKnowledgeScene(Scene):
         self.wait(0.3)
 
         # ── Node data ─────────────────────────────────────────────────────────
-        # NODE_H=0.62, NODE_GAP=0.74 → 0.12 unit padding between adjacent boxes
-        # (no more overlap). Layout fits News(5) + Market(3) within frame.
-        NODE_W, NODE_GAP = 3.10, 0.74
+        # NODE_H=0.62, NODE_GAP=0.68 → 0.06 unit padding between adjacent boxes,
+        # tightened slightly so bottom Market/Global nodes fit inside the frame.
+        NODE_W, NODE_GAP = 3.10, 0.68
         HDR_W = 3.30                     # wider category headers
 
         NEWS  = [("NewsAPI",      "Breaking News"),

@@ -65,7 +65,7 @@ function Chrome({ n, section }) {
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 22, whiteSpace: 'nowrap', flexShrink: 0 }}>
           <span style={{ whiteSpace: 'nowrap' }}><span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: COLORS.green, marginRight: 8, boxShadow: `0 0 10px ${COLORS.green}`, animation: 'blink-smooth 2s ease-in-out infinite alternate' }} />LIVE</span>
           <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>ET GENAI · 26 APR 2026</span>
-          <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>{n}/16</span>
+          <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>{n}/17</span>
         </div>
       </div>
       <div style={{
@@ -237,7 +237,7 @@ function Slide1() {
 // ======= SLIDE 2 =======
 function Slide2() {
   const stats = [
-    { num: '15 Cr+', unit: 'DEMAT ACCOUNTS',  sub: 'CDSL + NSDL, Mar 2024',  color: COLORS.cyan,  icon: Icon.Users },
+    { num: '21 Cr+', unit: 'DEMAT ACCOUNTS',  sub: '4.5 Cr active · NSDL+CDSL, Jan 2026',  color: COLORS.cyan,  icon: Icon.Users },
     { num: '80%',    unit: 'RELY ON TIPS',    sub: 'Informal, unverified',   color: COLORS.amber, icon: Icon.Alert },
     { num: '2 to 3 h',unit:'WASTED DAILY',    sub: 'Per active trader',      color: COLORS.green, icon: Icon.Clock },
     { num: '₹2.19 L',unit: 'LOST / USER / YR',sub: 'Productivity foregone',  color: COLORS.red,   icon: Icon.Trend },
@@ -410,7 +410,7 @@ function Slide5() {
   const tabs = ['OVERVIEW', 'SIGNALS', 'GLOBAL INTEL', 'NLQ CHAT', 'PORTFOLIO'];
   return (
     <Frame>
-      <Chrome n="05" section="DEMO / ENTER SYSTEM" />
+      <Chrome n="06" section="DEMO / ENTER SYSTEM" />
       <Body topPad={64} botPad={44}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexShrink: 0 }}>
           <div>
@@ -532,7 +532,7 @@ function Slide6() {
   ];
   return (
     <Frame>
-      <Chrome n="06" section="SYSTEM / MOAT" />
+      <Chrome n="07" section="SYSTEM / MOAT" />
       <Body>
         <Title eyebrow="Moat · 05">Three things a wrapper cannot copy.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, flex: 1, minHeight: 0 }}>
@@ -579,6 +579,19 @@ function Slide6() {
             );
           })}
         </div>
+
+        <Card className="anim-el anim-fade delay-4" style={{
+          marginTop: 24, padding: '22px 32px', flexShrink: 0,
+          border: `1px solid ${COLORS.violet}`, background: 'rgba(167,139,250,0.06)',
+          display: 'flex', alignItems: 'center', gap: 24,
+        }}>
+          <span style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.violet, letterSpacing: '0.22em', flexShrink: 0 }}>
+            REGULATORY MOAT
+          </span>
+          <span style={{ fontSize: 22, color: COLORS.text, lineHeight: 1.35 }}>
+            Perplexity Finance is free — but lacks NSE SAST/PIT &amp; NSDL FII/DII feeds. India-specific regulatory data isn't in any global API.
+          </span>
+        </Card>
       </Body>
     </Frame>
   );
@@ -596,7 +609,7 @@ function Slide7() {
   const maxW = 0.25;
   return (
     <Frame>
-      <Chrome n="07" section="ENGINE / FUSION" />
+      <Chrome n="09" section="ENGINE / FUSION" />
       <Body>
         <Title eyebrow="Fusion · 06">13 agents, one Alpha Score.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 60, flex: 1, minHeight: 0 }}>
@@ -675,7 +688,7 @@ function Slide7() {
 function Slide8() {
   return (
     <Frame>
-      <Chrome n="08" section="IMPACT / USER" />
+      <Chrome n="11" section="IMPACT / USER" />
       <Body>
         <Title eyebrow="Impact · 07">Time saved. Alpha earned.</Title>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, flex: 1, minHeight: 0 }}>
@@ -751,7 +764,7 @@ function Slide9() {
   ];
   return (
     <Frame>
-      <Chrome n="09" section="FORECAST / ET MARKETS" />
+      <Chrome n="12" section="FORECAST / ET MARKETS" />
       <Body>
         <Title eyebrow="Revenue · 08">The path to ₹599 Cr ARR.</Title>
 
@@ -788,22 +801,35 @@ function Slide9() {
           ))}
         </div>
 
-        <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 28, flexShrink: 0 }}>
-          <Card className="anim-el anim-slide-right delay-4" style={{ padding: '24px 32px' }}>
-            <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textFaint, letterSpacing: '0.15em', marginBottom: 10 }}>MODEL ASSUMPTIONS</div>
-            <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.text, lineHeight: 1.6 }}>
-              ₹999/mo premium tier · SOM 1.5L users (0.5% of active traders)
+        <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 24, flexShrink: 0 }}>
+          <Card className="anim-el anim-slide-right delay-4" style={{ padding: '20px 28px' }}>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 19, color: COLORS.textFaint, letterSpacing: '0.15em', marginBottom: 8 }}>MODEL ASSUMPTIONS</div>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 21, color: COLORS.text, lineHeight: 1.5 }}>
+              ₹999/mo premium tier · SOM 1.5L users (0.5% of 4.5 Cr active)
             </div>
           </Card>
-          <Card className="anim-el anim-slide-right delay-5" style={{ padding: '24px 32px', borderLeft: `3px solid ${COLORS.green}` }}>
-            <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.green, letterSpacing: '0.15em', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <Card className="anim-el anim-slide-right delay-5" style={{ padding: '20px 28px', borderLeft: `3px solid ${COLORS.green}` }}>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 19, color: COLORS.green, letterSpacing: '0.15em', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
               <Icon.Check s={18} c={COLORS.green} /> ET MARKETS SAVINGS
             </div>
-            <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: COLORS.text, lineHeight: 1.6 }}>
-              30% less manual analyst work · ₹5-10 Cr / yr
+            <div style={{ fontFamily: FONT_MONO, fontSize: 21, color: COLORS.text, lineHeight: 1.5 }}>
+              30% less manual analyst work · ₹5–10 Cr / yr
             </div>
           </Card>
         </div>
+
+        <Card className="anim-el anim-fade delay-6" style={{
+          marginTop: 16, padding: '18px 28px', flexShrink: 0,
+          border: `1px solid ${COLORS.amber}`, background: 'rgba(255,176,32,0.06)',
+          display: 'flex', alignItems: 'center', gap: 20,
+        }}>
+          <span style={{ fontFamily: FONT_MONO, fontSize: 19, color: COLORS.amber, letterSpacing: '0.18em', flexShrink: 0 }}>
+            BENCHMARK
+          </span>
+          <span style={{ fontSize: 21, color: COLORS.text, lineHeight: 1.4 }}>
+            Tickertape (₹5K/yr screener) does <span style={{ color: COLORS.amber, fontWeight: 600 }}>₹114 Cr ARR (FY25)</span>. We're real-time at ₹12K/yr targeting half their userbase — ₹599 Cr at Year 5 is conservative.
+          </span>
+        </Card>
       </Body>
     </Frame>
   );
@@ -814,7 +840,7 @@ function Slide10() {
   const team = ['Animesh Raj', 'Devansh Gupta', 'Monika Kumari'];
   return (
     <Frame>
-      <Chrome n="10" section="END / OPEN FOR Q&A" />
+      <Chrome n="17" section="END / OPEN FOR Q&A" />
       <Body>
         <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 80, flex: 1, minHeight: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -871,7 +897,7 @@ function Slide10() {
 function Slide11() {
   return (
     <Frame style={{ overflow: 'hidden' }}>
-      <Chrome n="11" section="INGESTION / CONNECTORS" />
+      <Chrome n="05" section="INGESTION / CONNECTORS" />
       {/* Full-bleed Manim video */}
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
@@ -880,8 +906,8 @@ function Slide11() {
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
       </div>
-      {/* Overlay badge + legend (bottom-left, above footer chrome) */}
-      <div style={{
+      {/* Overlay badge + legend — fades out 3s after slide activates so video plays clean */}
+      <div className="video-overlay" style={{
         position: 'absolute', bottom: 60, left: 64, zIndex: 20,
         display: 'flex', flexDirection: 'column', gap: 14,
       }}>
@@ -913,7 +939,7 @@ function Slide11() {
 function Slide12() {
   return (
     <Frame style={{ overflow: 'hidden' }}>
-      <Chrome n="12" section="NLQ / MARKET CHATGPT" />
+      <Chrome n="08" section="NLQ / MARKET CHATGPT" />
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
           autoPlay loop muted playsInline
@@ -921,8 +947,8 @@ function Slide12() {
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
       </div>
-      {/* Overlay badge */}
-      <div style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
+      {/* Overlay badge — fades out 3s after slide activates so video plays clean */}
+      <div className="video-overlay" style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 10, alignSelf: 'flex-start',
           padding: '8px 20px', borderRadius: 6,
@@ -952,7 +978,7 @@ function Slide13() {
   ];
   return (
     <Frame style={{ overflow: 'hidden' }}>
-      <Chrome n="13" section="AGENTS / CONSENSUS" />
+      <Chrome n="10" section="AGENTS / CONSENSUS" />
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
           autoPlay loop muted playsInline
@@ -960,7 +986,7 @@ function Slide13() {
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
       </div>
-      <div style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div className="video-overlay" style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 10, alignSelf: 'flex-start',
           padding: '8px 20px', borderRadius: 6,
@@ -989,7 +1015,7 @@ function Slide13() {
 function Slide14() {
   return (
     <Frame>
-      <Chrome n="14" section="APPENDIX A / ARCHITECTURE" />
+      <Chrome n="13" section="APPENDIX A / ARCHITECTURE" />
       <Body topPad={64} botPad={52}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24, flexShrink: 0 }}>
           <span style={{
@@ -1038,7 +1064,7 @@ function Slide15() {
   ];
   return (
     <Frame>
-      <Chrome n="15" section="APPENDIX B / DUCKDB SCHEMA" />
+      <Chrome n="14" section="APPENDIX B / DUCKDB SCHEMA" />
       <Body topPad={64} botPad={52}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 32, flexShrink: 0 }}>
           <span style={{
@@ -1118,7 +1144,7 @@ function Slide16() {
   ];
   return (
     <Frame>
-      <Chrome n="16" section="APPENDIX C / ONLINE ML" />
+      <Chrome n="15" section="APPENDIX C / ONLINE ML" />
       <Body topPad={64} botPad={52}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 32, flexShrink: 0 }}>
           <span style={{
@@ -1159,8 +1185,93 @@ function Slide16() {
   );
 }
 
+// ======= SLIDE 17 — REFERENCES =======
+function Slide17() {
+  const refs = [
+    {
+      cat: 'Market Data',  color: COLORS.cyan,
+      items: [
+        { label: 'NSDL Depository Statistics — 21 Cr+ demat accounts (Oct 2025)', url: 'nsdl.co.in/depository-monthly-statistics.php' },
+        { label: 'CDSL Depository Statistics',                                     url: 'cdslindia.com/Publications/DepositoryStatistics.html' },
+        { label: 'Active demat count 4.5 Cr (Jan 2026) — AngelOne / Choice India', url: 'choiceindia.com/blog/total-number-of-demat-accounts-in-india' },
+      ],
+    },
+    {
+      cat: 'Competitive Landscape',  color: COLORS.amber,
+      items: [
+        { label: 'Bloomberg Terminal pricing $31,980/yr (2026) — PricingNow',  url: 'pricingnow.com/question/bloomberg-terminal-pricing/' },
+        { label: 'Tickertape Pro ₹4,999/yr & ₹114 Cr ARR (FY25) — Tracxn',     url: 'tracxn.com/d/companies/tickertape' },
+        { label: 'Perplexity Finance — free for Indian markets (2026)',         url: 'perplexity.ai/finance' },
+        { label: 'Helm Terminal — AI Bloomberg alternatives ($0–$150/mo)',      url: 'helmterminal.dev/blog/best-bloomberg-terminal-alternatives' },
+      ],
+    },
+    {
+      cat: 'Technical Stack',  color: COLORS.violet,
+      items: [
+        { label: 'Pathway streaming engine — Adaptive RAG with geometric retrieval', url: 'pathway.com / pathway/pathway' },
+        { label: 'LangGraph — multi-step agent orchestration',                       url: 'langchain-ai.github.io/langgraph' },
+        { label: 'DuckDB — in-process OLAP analytics',                                url: 'duckdb.org' },
+        { label: 'River ML — online learning (Half-Space Trees, ADWIN)',              url: 'riverml.xyz' },
+        { label: 'Manim Community — animation engine for the slides',                  url: 'manim.community' },
+      ],
+    },
+    {
+      cat: 'Regulatory Data Sources',  color: COLORS.green,
+      items: [
+        { label: 'NSE SAST/PIT — insider trading disclosures (regulated)',  url: 'nseindia.com' },
+        { label: 'NSDL FII/DII — institutional flow data (regulated)',       url: 'nsdliw.nsdl.com' },
+        { label: 'BSE — corporate filings, bulk/block deals',                  url: 'bseindia.com' },
+        { label: 'FRED — US Federal Reserve macro indicators',                 url: 'fred.stlouisfed.org' },
+      ],
+    },
+  ];
+
+  return (
+    <Frame>
+      <Chrome n="16" section="REFERENCES / CITATIONS" />
+      <Body>
+        <Title eyebrow="References · 15">Sources &amp; citations.</Title>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, flex: 1, minHeight: 0 }}>
+          {refs.map((r, i) => (
+            <Card key={r.cat} className={`anim-el anim-fade delay-${i + 1}`} style={{
+              padding: 28, display: 'flex', flexDirection: 'column',
+              borderTop: `3px solid ${r.color}`,
+            }}>
+              <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: r.color, letterSpacing: '0.18em', marginBottom: 16 }}>
+                {r.cat.toUpperCase()}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {r.items.map((it) => (
+                  <div key={it.label}>
+                    <div style={{ fontSize: 19, color: COLORS.text, lineHeight: 1.3, marginBottom: 4 }}>
+                      <span style={{ color: r.color, marginRight: 8 }}>▸</span>
+                      {it.label}
+                    </div>
+                    <div style={{ fontFamily: FONT_MONO, fontSize: 14, color: COLORS.textFaint, paddingLeft: 22 }}>
+                      {it.url}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="anim-el anim-fade delay-5" style={{
+          marginTop: 16, padding: '16px 28px', flexShrink: 0,
+          border: `1px solid ${COLORS.cyan}`, background: 'rgba(34,211,238,0.05)',
+        }}>
+          <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.cyan, letterSpacing: '0.10em', textAlign: 'center' }}>
+            All numerics in this deck are verified against the linked sources or backend/src/ codebase.
+          </div>
+        </Card>
+      </Body>
+    </Frame>
+  );
+}
+
 Object.assign(window, {
   Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10,
-  Slide11, Slide12, Slide13, Slide14, Slide15, Slide16,
+  Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17,
   COLORS, TYPE_SCALE, SPACING, FONT_MONO, FONT_SANS,
 });

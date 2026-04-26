@@ -44,6 +44,15 @@
   @keyframes grow-h { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
   @keyframes grow-v { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
   @keyframes draw-line { to { stroke-dashoffset: 0; } }
+
+  /* Video-slide overlay: visible 3s, then fades out so video plays unobstructed */
+  @keyframes overlay-fade-out {
+    0%, 50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  section[data-deck-active] .video-overlay {
+    animation: overlay-fade-out 5s ease-out 0.4s forwards;
+  }
 </style>
 
 <script type="application/json" id="speaker-notes">
@@ -68,18 +77,19 @@
   <section data-label="02 Problem Scale"><div id="s2"></div></section>
   <section data-label="03 Live AI Paradigm"><div id="s3"></div></section>
   <section data-label="04 Architecture"><div id="s4"></div></section>
-  <section data-label="05 Demo Transition"><div id="s5"></div></section>
-  <section data-label="06 Technical Moat"><div id="s6"></div></section>
-  <section data-label="07 Fusion Engine"><div id="s7"></div></section>
-  <section data-label="08 User Impact"><div id="s8"></div></section>
-  <section data-label="09 Revenue Projection"><div id="s9"></div></section>
-  <section data-label="10 Team & Repository"><div id="s10"></div></section>
-  <section data-label="11 Herd of Knowledge"><div id="s11"></div></section>
-  <section data-label="12 NLQ Pipeline"><div id="s12"></div></section>
-  <section data-label="13 Agent Consensus"><div id="s13"></div></section>
-  <section data-label="14 Appendix A: Architecture"><div id="s14"></div></section>
-  <section data-label="15 Appendix B: DuckDB Schema"><div id="s15"></div></section>
-  <section data-label="16 Appendix C: Anomaly Detection"><div id="s16"></div></section>
+  <section data-label="05 Herd of Knowledge"><div id="s11"></div></section>
+  <section data-label="06 Demo Transition"><div id="s5"></div></section>
+  <section data-label="07 Technical Moat"><div id="s6"></div></section>
+  <section data-label="08 NLQ Pipeline"><div id="s12"></div></section>
+  <section data-label="09 Fusion Engine"><div id="s7"></div></section>
+  <section data-label="10 Agent Consensus"><div id="s13"></div></section>
+  <section data-label="11 User Impact"><div id="s8"></div></section>
+  <section data-label="12 Revenue Projection"><div id="s9"></div></section>
+  <section data-label="13 Appendix A: Architecture"><div id="s14"></div></section>
+  <section data-label="14 Appendix B: DuckDB Schema"><div id="s15"></div></section>
+  <section data-label="15 Appendix C: Anomaly Detection"><div id="s16"></div></section>
+  <section data-label="16 References"><div id="s17"></div></section>
+  <section data-label="17 Team & Repository"><div id="s10"></div></section>
 </deck-stage>
 
 <script src="deck-stage.js"></script>
@@ -89,10 +99,11 @@
 <script type="text/babel" src="slides/components.jsx"></script>
 <script type="text/babel">
   const mounts = [
-    ['s1', Slide1], ['s2', Slide2], ['s3', Slide3], ['s4', Slide4], ['s5', Slide5],
-    ['s6', Slide6], ['s7', Slide7], ['s8', Slide8], ['s9', Slide9], ['s10', Slide10],
-    ['s11', Slide11], ['s12', Slide12], ['s13', Slide13],
+    ['s1', Slide1], ['s2', Slide2], ['s3', Slide3], ['s4', Slide4],
+    ['s11', Slide11], ['s5', Slide5], ['s6', Slide6], ['s12', Slide12],
+    ['s7', Slide7], ['s13', Slide13], ['s8', Slide8], ['s9', Slide9],
     ['s14', Slide14], ['s15', Slide15], ['s16', Slide16],
+    ['s17', Slide17], ['s10', Slide10],
   ];
   mounts.forEach(([id, C]) => {
     const el = document.getElementById(id);
