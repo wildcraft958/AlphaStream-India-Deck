@@ -1,0 +1,12 @@
+# Manim intermediate render cache — final MP4s are copied to animations/
+media/
+__pycache__/
+*.pyc
+.DS_Store
+
+# OS / editor cruft
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

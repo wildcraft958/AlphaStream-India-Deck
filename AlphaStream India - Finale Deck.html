@@ -74,6 +74,12 @@
   <section data-label="08 User Impact"><div id="s8"></div></section>
   <section data-label="09 Revenue Projection"><div id="s9"></div></section>
   <section data-label="10 Team & Repository"><div id="s10"></div></section>
+  <section data-label="11 Herd of Knowledge"><div id="s11"></div></section>
+  <section data-label="12 NLQ Pipeline"><div id="s12"></div></section>
+  <section data-label="13 Agent Consensus"><div id="s13"></div></section>
+  <section data-label="14 Appendix A: Architecture"><div id="s14"></div></section>
+  <section data-label="15 Appendix B: DuckDB Schema"><div id="s15"></div></section>
+  <section data-label="16 Appendix C: Anomaly Detection"><div id="s16"></div></section>
 </deck-stage>
 
 <script src="deck-stage.js"></script>
@@ -85,6 +91,8 @@
   const mounts = [
     ['s1', Slide1], ['s2', Slide2], ['s3', Slide3], ['s4', Slide4], ['s5', Slide5],
     ['s6', Slide6], ['s7', Slide7], ['s8', Slide8], ['s9', Slide9], ['s10', Slide10],
+    ['s11', Slide11], ['s12', Slide12], ['s13', Slide13],
+    ['s14', Slide14], ['s15', Slide15], ['s16', Slide16],
   ];
   mounts.forEach(([id, C]) => {
     const el = document.getElementById(id);

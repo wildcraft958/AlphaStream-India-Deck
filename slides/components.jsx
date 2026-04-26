@@ -65,7 +65,7 @@ function Chrome({ n, section }) {
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 22, whiteSpace: 'nowrap', flexShrink: 0 }}>
           <span style={{ whiteSpace: 'nowrap' }}><span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: COLORS.green, marginRight: 8, boxShadow: `0 0 10px ${COLORS.green}`, animation: 'blink-smooth 2s ease-in-out infinite alternate' }} />LIVE</span>
           <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>ET GENAI · 26 APR 2026</span>
-          <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>{n}/10</span>
+          <span style={{ color: COLORS.textFaint, whiteSpace: 'nowrap' }}>{n}/16</span>
         </div>
       </div>
       <div style={{
@@ -867,7 +867,300 @@ function Slide10() {
   );
 }
 
+// ======= SLIDE 11 — HERD OF KNOWLEDGE (animated) =======
+function Slide11() {
+  return (
+    <Frame style={{ overflow: 'hidden' }}>
+      <Chrome n="11" section="INGESTION / CONNECTORS" />
+      {/* Full-bleed Manim video */}
+      <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
+        <video
+          autoPlay loop muted playsInline
+          src="animations/herd_of_knowledge.mp4"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </div>
+      {/* Overlay badge + legend (bottom-left, above footer chrome) */}
+      <div style={{
+        position: 'absolute', bottom: 60, left: 64, zIndex: 20,
+        display: 'flex', flexDirection: 'column', gap: 14,
+      }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 10,
+          padding: '8px 20px', borderRadius: 6,
+          background: 'rgba(34,211,238,0.12)', border: `1px solid ${COLORS.cyan}`,
+          fontFamily: FONT_MONO, fontSize: 18, color: COLORS.cyan, letterSpacing: '0.18em',
+          alignSelf: 'flex-start',
+        }}>
+          HERD OF KNOWLEDGE
+        </div>
+        <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textDim, letterSpacing: '0.06em' }}>
+          <span style={{ color: COLORS.cyan }}>News (5)</span>
+          <span style={{ color: COLORS.textFaint }}> · </span>
+          <span style={{ color: COLORS.green }}>Market (3)</span>
+          <span style={{ color: COLORS.textFaint }}> · </span>
+          <span style={{ color: COLORS.amber }}>Institutional (3)</span>
+          <span style={{ color: COLORS.textFaint }}> · </span>
+          <span style={{ color: COLORS.violet }}>Global (3)</span>
+          <span style={{ color: COLORS.textFaint }}> = 14 Connectors · Pathway Unified Stream</span>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ======= SLIDE 12 — NLQ PIPELINE (animated, dedicated) =======
+function Slide12() {
+  return (
+    <Frame style={{ overflow: 'hidden' }}>
+      <Chrome n="12" section="NLQ / MARKET CHATGPT" />
+      <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
+        <video
+          autoPlay loop muted playsInline
+          src="animations/nlq_pipeline.mp4"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </div>
+      {/* Overlay badge */}
+      <div style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 10, alignSelf: 'flex-start',
+          padding: '8px 20px', borderRadius: 6,
+          background: 'rgba(16,244,177,0.12)', border: `1px solid ${COLORS.green}`,
+          fontFamily: FONT_MONO, fontSize: 18, color: COLORS.green, letterSpacing: '0.18em',
+        }}>
+          NLQ AGENT
+        </div>
+        <div style={{ fontSize: 36, fontWeight: 700, color: COLORS.text, letterSpacing: '-0.01em' }}>
+          Market ChatGPT — Next Gen
+        </div>
+        <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.textDim, letterSpacing: '0.04em' }}>
+          8-Node LangGraph · Text2SQL · Self-Correction Loop · 3 MCP Servers · Session Memory
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ======= SLIDE 13 — AGENT CONSENSUS (animated) =======
+function Slide13() {
+  const legend = [
+    { color: COLORS.cyan,   label: 'Market Analysis' },
+    { color: COLORS.violet, label: 'Data Intelligence' },
+    { color: COLORS.amber,  label: 'Decision Agent' },
+    { color: COLORS.green,  label: 'NLQ Agent' },
+  ];
+  return (
+    <Frame style={{ overflow: 'hidden' }}>
+      <Chrome n="13" section="AGENTS / CONSENSUS" />
+      <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
+        <video
+          autoPlay loop muted playsInline
+          src="animations/agent_consensus.mp4"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </div>
+      <div style={{ position: 'absolute', bottom: 60, left: 64, zIndex: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 10, alignSelf: 'flex-start',
+          padding: '8px 20px', borderRadius: 6,
+          background: 'rgba(255,176,32,0.12)', border: `1px solid ${COLORS.amber}`,
+          fontFamily: FONT_MONO, fontSize: 18, color: COLORS.amber, letterSpacing: '0.18em',
+        }}>
+          13-AGENT CONSENSUS
+        </div>
+        <div style={{ fontSize: 32, fontWeight: 600, color: COLORS.text }}>
+          Each specialist contributes a weighted score to the Decision Agent
+        </div>
+        <div style={{ display: 'flex', gap: 28, fontFamily: FONT_MONO, fontSize: 18 }}>
+          {legend.map(({ color, label }) => (
+            <span key={label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 10, height: 10, borderRadius: '50%', background: color, display: 'inline-block', boxShadow: `0 0 8px ${color}` }} />
+              <span style={{ color: COLORS.textDim }}>{label}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ======= SLIDE 14 — APPENDIX A: Accurate System Architecture =======
+function Slide14() {
+  return (
+    <Frame>
+      <Chrome n="14" section="APPENDIX A / ARCHITECTURE" />
+      <Body topPad={64} botPad={52}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24, flexShrink: 0 }}>
+          <span style={{
+            padding: '6px 18px', borderRadius: 6,
+            background: 'rgba(255,176,32,0.12)', border: `1px solid ${COLORS.amber}`,
+            fontFamily: FONT_MONO, fontSize: 17, color: COLORS.amber, letterSpacing: '0.2em',
+          }}>APPENDIX A</span>
+          <span style={{ fontSize: 40, fontWeight: 700, color: COLORS.text }}>Full System Architecture</span>
+        </div>
+        <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src="animations/detailed_arch.png"
+            alt="AlphaStream India Full System Architecture"
+            style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+          />
+        </div>
+        <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.textFaint, letterSpacing: '0.06em', flexShrink: 0, marginTop: 12 }}>
+          Verified against backend/src/ — 15 connectors · 14 agents · 10 DuckDB tables · 60+ FastAPI endpoints
+        </div>
+      </Body>
+    </Frame>
+  );
+}
+
+// ======= SLIDE 15 — APPENDIX B: DuckDB Analytics Schema =======
+function Slide15() {
+  const tables = [
+    { name: 'dim_stocks',            desc: 'Nifty 50/200 master universe' },
+    { name: 'fact_daily_prices',     desc: 'OHLCV per ticker+date' },
+    { name: 'fact_signals',          desc: 'Agent outputs + Alpha Score' },
+    { name: 'fact_insider_trades',   desc: 'SAST/PIT/bulk/block deals' },
+    { name: 'fact_fii_dii_flows',    desc: 'NSDL daily institutional flows' },
+    { name: 'fact_filings',          desc: 'BSE corporate announcements' },
+    { name: 'fact_bulk_deals',       desc: 'Bulk/block transactions' },
+    { name: 'fact_quarterly_results',desc: 'Revenue, PAT, EBITDA margins' },
+    { name: 'fact_articles',         desc: 'News + threat classification' },
+    { name: 'insights',              desc: 'Ambient alerts + severity' },
+  ];
+  const views = [
+    { name: 'v_signal_summary',        desc: 'Latest 7d signals by ticker' },
+    { name: 'v_insider_activity_30d',  desc: '30d insider trades + sector' },
+    { name: 'v_fii_dii_trend',         desc: '5d/20d rolling flows' },
+    { name: 'v_sector_heatmap',        desc: 'Signal count + avg alpha' },
+    { name: 'v_stock_screener',        desc: 'Latest price + latest signal' },
+    { name: 'v_recent_news',           desc: 'Last 200 news articles' },
+  ];
+  return (
+    <Frame>
+      <Chrome n="15" section="APPENDIX B / DUCKDB SCHEMA" />
+      <Body topPad={64} botPad={52}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 32, flexShrink: 0 }}>
+          <span style={{
+            padding: '6px 18px', borderRadius: 6,
+            background: 'rgba(167,139,250,0.12)', border: `1px solid ${COLORS.violet}`,
+            fontFamily: FONT_MONO, fontSize: 17, color: COLORS.violet, letterSpacing: '0.2em',
+          }}>APPENDIX B</span>
+          <span style={{ fontSize: 40, fontWeight: 700, color: COLORS.text }}>DuckDB Analytics Schema</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 40, flex: 1, minHeight: 0 }}>
+          {/* Fact Tables */}
+          <Card style={{ padding: '28px 36px', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.cyan, letterSpacing: '0.15em', marginBottom: 20 }}>
+              FACT TABLES (10)
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
+              {tables.map((t) => (
+                <div key={t.name} style={{ display: 'flex', gap: 14, alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.cyan, minWidth: 300 }}>
+                    <span style={{ color: COLORS.textFaint, marginRight: 8 }}>▸</span>{t.name}
+                  </span>
+                  <span style={{ fontFamily: FONT_MONO, fontSize: 17, color: COLORS.textDim }}>{t.desc}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+          {/* Views */}
+          <Card style={{ padding: '28px 36px', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.green, letterSpacing: '0.15em', marginBottom: 20 }}>
+              PRE-AGGREGATED VIEWS (6)
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
+              {views.map((v) => (
+                <div key={v.name} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  <span style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.green }}>
+                    <span style={{ color: COLORS.textFaint, marginRight: 8 }}>▸</span>{v.name}
+                  </span>
+                  <span style={{ fontFamily: FONT_MONO, fontSize: 17, color: COLORS.textDim, paddingLeft: 22 }}>{v.desc}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ height: 1, background: COLORS.line, margin: '20px 0 16px' }} />
+            <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.textFaint }}>
+              Star schema · sub-100ms aggregation queries via DuckDB in-process OLAP
+            </div>
+          </Card>
+        </div>
+      </Body>
+    </Frame>
+  );
+}
+
+// ======= SLIDE 16 — APPENDIX C: Online Anomaly Detection =======
+function Slide16() {
+  const detectors = [
+    {
+      name: 'Half-Space Trees',
+      color: COLORS.red,
+      what: 'Price Anomaly Detection',
+      how: 'Online random forest for streaming price ticks. Fires alert when anomaly score > 0.7.',
+      tech: 'River ML · HalfSpaceTrees',
+    },
+    {
+      name: 'Z-Score Rolling',
+      color: COLORS.amber,
+      what: 'Volume Spike Detection',
+      how: 'Rolling standard deviation on intraday volume. Alert threshold: |z| > 2.5.',
+      tech: 'River ML · rolling stats',
+    },
+    {
+      name: 'ADWIN',
+      color: COLORS.violet,
+      what: 'Sentiment Drift Detection',
+      how: 'Adaptive Windowing algorithm detects sudden shifts in article sentiment per ticker.',
+      tech: 'River ML · ADWIN drift',
+    },
+  ];
+  return (
+    <Frame>
+      <Chrome n="16" section="APPENDIX C / ONLINE ML" />
+      <Body topPad={64} botPad={52}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 32, flexShrink: 0 }}>
+          <span style={{
+            padding: '6px 18px', borderRadius: 6,
+            background: 'rgba(255,85,119,0.12)', border: `1px solid ${COLORS.red}`,
+            fontFamily: FONT_MONO, fontSize: 17, color: COLORS.red, letterSpacing: '0.2em',
+          }}>APPENDIX C</span>
+          <span style={{ fontSize: 40, fontWeight: 700, color: COLORS.text }}>Online Anomaly Detection — River ML</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, flex: 1, minHeight: 0 }}>
+          {detectors.map((d, i) => (
+            <Card key={d.name} className={`anim-el anim-slide-up delay-${i + 1}`} style={{
+              padding: 44, display: 'flex', flexDirection: 'column',
+              borderTop: `3px solid ${d.color}`,
+              boxShadow: `0 0 60px -20px ${d.color}40`,
+            }}>
+              <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: d.color, letterSpacing: '0.18em', marginBottom: 12 }}>
+                {d.tech}
+              </div>
+              <div style={{ fontSize: 44, fontWeight: 700, color: COLORS.text, lineHeight: 1.1, marginBottom: 16 }}>
+                {d.name}
+              </div>
+              <div style={{ fontFamily: FONT_MONO, fontSize: 22, color: d.color, marginBottom: 20 }}>
+                {d.what}
+              </div>
+              <div style={{ height: 1, background: COLORS.line, marginBottom: 20 }} />
+              <div style={{ fontSize: 26, color: COLORS.textDim, lineHeight: 1.5, flex: 1 }}>
+                {d.how}
+              </div>
+            </Card>
+          ))}
+        </div>
+        <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textFaint, marginTop: 20, flexShrink: 0 }}>
+          Incremental online ML — models update on each price tick without full retraining (River library)
+        </div>
+      </Body>
+    </Frame>
+  );
+}
+
 Object.assign(window, {
   Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10,
+  Slide11, Slide12, Slide13, Slide14, Slide15, Slide16,
   COLORS, TYPE_SCALE, SPACING, FONT_MONO, FONT_SANS,
 });
