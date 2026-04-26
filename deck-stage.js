@@ -120,6 +120,13 @@
       gap: 2px;
       padding: 0 12px;
       overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nav-list::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
     }
 
     .nav-item {
@@ -635,9 +642,29 @@
       const prev = this._prevIndex == null ? -1 : this._prevIndex;
       const curr = this._index;
 
+      // Stop any pending video-play timer from the previous slide.
+      if (this._videoPlayTimer) {
+        clearTimeout(this._videoPlayTimer);
+        this._videoPlayTimer = null;
+      }
+
       this._slides.forEach((s, i) => {
-        if (i === curr) s.setAttribute('data-deck-active', '');
-        else s.removeAttribute('data-deck-active');
+        const videos = s.querySelectorAll('video');
+        if (i === curr) {
+          s.setAttribute('data-deck-active', '');
+          // Reset videos to t=0 and keep them paused until the overlay starts fading.
+          // Overlay fade timing in CSS: 5s × 50% solid + 0.4s delay = 2.9s before fade begins.
+          videos.forEach(v => { try { v.pause(); v.currentTime = 0; } catch (e) {} });
+          if (videos.length > 0) {
+            this._videoPlayTimer = setTimeout(() => {
+              videos.forEach(v => { try { v.play(); } catch (e) {} });
+              this._videoPlayTimer = null;
+            }, 2900);
+          }
+        } else {
+          s.removeAttribute('data-deck-active');
+          videos.forEach(v => { try { v.pause(); v.currentTime = 0; } catch (e) {} });
+        }
       });
 
       if (this._navItems) {

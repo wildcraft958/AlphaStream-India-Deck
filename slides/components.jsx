@@ -581,7 +581,7 @@ function Slide6() {
         </div>
 
         <Card className="anim-el anim-fade delay-4" style={{
-          marginTop: 24, padding: '22px 32px', flexShrink: 0,
+          marginTop: 48, padding: '32px 36px', flexShrink: 0,
           border: `1px solid ${COLORS.violet}`, background: 'rgba(167,139,250,0.06)',
           display: 'flex', alignItems: 'center', gap: 24,
         }}>
@@ -589,7 +589,7 @@ function Slide6() {
             REGULATORY MOAT
           </span>
           <span style={{ fontSize: 22, color: COLORS.text, lineHeight: 1.35 }}>
-            Perplexity Finance is free — but lacks NSE SAST/PIT &amp; NSDL FII/DII feeds. India-specific regulatory data isn't in any global API.
+            Perplexity Finance is free, but lacks NSE SAST/PIT &amp; NSDL FII/DII feeds. India-specific regulatory data isn't in any global API.
           </span>
         </Card>
       </Body>
@@ -827,7 +827,7 @@ function Slide9() {
             BENCHMARK
           </span>
           <span style={{ fontSize: 21, color: COLORS.text, lineHeight: 1.4 }}>
-            Tickertape (₹5K/yr screener) does <span style={{ color: COLORS.amber, fontWeight: 600 }}>₹114 Cr ARR (FY25)</span>. We're real-time at ₹12K/yr targeting half their userbase — ₹599 Cr at Year 5 is conservative.
+            Tickertape (₹5K/yr screener) does <span style={{ color: COLORS.amber, fontWeight: 600 }}>₹114 Cr ARR (FY25)</span>. We're real-time at ₹12K/yr targeting half their userbase, so ₹599 Cr at Year 5 is conservative.
           </span>
         </Card>
       </Body>
@@ -901,7 +901,7 @@ function Slide11() {
       {/* Full-bleed Manim video */}
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
-          autoPlay loop muted playsInline
+          loop muted playsInline preload="auto"
           src="animations/herd_of_knowledge.mp4"
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
@@ -942,7 +942,7 @@ function Slide12() {
       <Chrome n="08" section="NLQ / MARKET CHATGPT" />
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
-          autoPlay loop muted playsInline
+          loop muted playsInline preload="auto"
           src="animations/nlq_pipeline.mp4"
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
@@ -958,7 +958,7 @@ function Slide12() {
           NLQ AGENT
         </div>
         <div style={{ fontSize: 36, fontWeight: 700, color: COLORS.text, letterSpacing: '-0.01em' }}>
-          Market ChatGPT — Next Gen
+          Market ChatGPT · Next Gen
         </div>
         <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.textDim, letterSpacing: '0.04em' }}>
           8-Node LangGraph · Text2SQL · Self-Correction Loop · 3 MCP Servers · Session Memory
@@ -981,7 +981,7 @@ function Slide13() {
       <Chrome n="10" section="AGENTS / CONSENSUS" />
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, bottom: 44, background: '#05070D' }}>
         <video
-          autoPlay loop muted playsInline
+          loop muted playsInline preload="auto"
           src="animations/agent_consensus.mp4"
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
@@ -1033,7 +1033,7 @@ function Slide14() {
           />
         </div>
         <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.textFaint, letterSpacing: '0.06em', flexShrink: 0, marginTop: 12 }}>
-          Verified against backend/src/ — 15 connectors · 14 agents · 10 DuckDB tables · 60+ FastAPI endpoints
+          Verified against backend/src/ · 15 connectors · 14 agents · 10 DuckDB tables · 60+ FastAPI endpoints
         </div>
       </Body>
     </Frame>
@@ -1152,7 +1152,7 @@ function Slide16() {
             background: 'rgba(255,85,119,0.12)', border: `1px solid ${COLORS.red}`,
             fontFamily: FONT_MONO, fontSize: 17, color: COLORS.red, letterSpacing: '0.2em',
           }}>APPENDIX C</span>
-          <span style={{ fontSize: 40, fontWeight: 700, color: COLORS.text }}>Online Anomaly Detection — River ML</span>
+          <span style={{ fontSize: 40, fontWeight: 700, color: COLORS.text }}>Online Anomaly Detection · River ML</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, flex: 1, minHeight: 0 }}>
           {detectors.map((d, i) => (
@@ -1178,7 +1178,7 @@ function Slide16() {
           ))}
         </div>
         <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: COLORS.textFaint, marginTop: 20, flexShrink: 0 }}>
-          Incremental online ML — models update on each price tick without full retraining (River library)
+          Incremental online ML · models update on each price tick without full retraining (River library)
         </div>
       </Body>
     </Frame>
@@ -1191,37 +1191,37 @@ function Slide17() {
     {
       cat: 'Market Data',  color: COLORS.cyan,
       items: [
-        { label: 'NSDL Depository Statistics — 21 Cr+ demat accounts (Oct 2025)', url: 'nsdl.co.in/depository-monthly-statistics.php' },
+        { label: 'NSDL Depository Statistics · 21 Cr+ demat accounts (Oct 2025)', url: 'nsdl.co.in/depository-monthly-statistics.php' },
         { label: 'CDSL Depository Statistics',                                     url: 'cdslindia.com/Publications/DepositoryStatistics.html' },
-        { label: 'Active demat count 4.5 Cr (Jan 2026) — AngelOne / Choice India', url: 'choiceindia.com/blog/total-number-of-demat-accounts-in-india' },
+        { label: 'Active demat 4.5 Cr (Jan 2026) · AngelOne / Choice India',       url: 'choiceindia.com/blog/total-number-of-demat-accounts-in-india' },
       ],
     },
     {
       cat: 'Competitive Landscape',  color: COLORS.amber,
       items: [
-        { label: 'Bloomberg Terminal pricing $31,980/yr (2026) — PricingNow',  url: 'pricingnow.com/question/bloomberg-terminal-pricing/' },
-        { label: 'Tickertape Pro ₹4,999/yr & ₹114 Cr ARR (FY25) — Tracxn',     url: 'tracxn.com/d/companies/tickertape' },
-        { label: 'Perplexity Finance — free for Indian markets (2026)',         url: 'perplexity.ai/finance' },
-        { label: 'Helm Terminal — AI Bloomberg alternatives ($0–$150/mo)',      url: 'helmterminal.dev/blog/best-bloomberg-terminal-alternatives' },
+        { label: 'Bloomberg Terminal pricing $31,980/yr (2026) · PricingNow',   url: 'pricingnow.com/question/bloomberg-terminal-pricing/' },
+        { label: 'Tickertape Pro ₹4,999/yr & ₹114 Cr ARR (FY25) · Tracxn',      url: 'tracxn.com/d/companies/tickertape' },
+        { label: 'Perplexity Finance · free for Indian markets (2026)',          url: 'perplexity.ai/finance' },
+        { label: 'Helm Terminal · AI Bloomberg alternatives ($0 to $150/mo)',    url: 'helmterminal.dev/blog/best-bloomberg-terminal-alternatives' },
       ],
     },
     {
       cat: 'Technical Stack',  color: COLORS.violet,
       items: [
-        { label: 'Pathway streaming engine — Adaptive RAG with geometric retrieval', url: 'pathway.com / pathway/pathway' },
-        { label: 'LangGraph — multi-step agent orchestration',                       url: 'langchain-ai.github.io/langgraph' },
-        { label: 'DuckDB — in-process OLAP analytics',                                url: 'duckdb.org' },
-        { label: 'River ML — online learning (Half-Space Trees, ADWIN)',              url: 'riverml.xyz' },
-        { label: 'Manim Community — animation engine for the slides',                  url: 'manim.community' },
+        { label: 'Pathway streaming engine · Adaptive RAG with geometric retrieval', url: 'pathway.com / pathway/pathway' },
+        { label: 'LangGraph · multi-step agent orchestration',                       url: 'langchain-ai.github.io/langgraph' },
+        { label: 'DuckDB · in-process OLAP analytics',                                url: 'duckdb.org' },
+        { label: 'River ML · online learning (Half-Space Trees, ADWIN)',              url: 'riverml.xyz' },
+        { label: 'Manim Community · animation engine for the slides',                  url: 'manim.community' },
       ],
     },
     {
       cat: 'Regulatory Data Sources',  color: COLORS.green,
       items: [
-        { label: 'NSE SAST/PIT — insider trading disclosures (regulated)',  url: 'nseindia.com' },
-        { label: 'NSDL FII/DII — institutional flow data (regulated)',       url: 'nsdliw.nsdl.com' },
-        { label: 'BSE — corporate filings, bulk/block deals',                  url: 'bseindia.com' },
-        { label: 'FRED — US Federal Reserve macro indicators',                 url: 'fred.stlouisfed.org' },
+        { label: 'NSE SAST/PIT · insider trading disclosures (regulated)',  url: 'nseindia.com' },
+        { label: 'NSDL FII/DII · institutional flow data (regulated)',      url: 'nsdliw.nsdl.com' },
+        { label: 'BSE · corporate filings, bulk/block deals',                url: 'bseindia.com' },
+        { label: 'FRED · US Federal Reserve macro indicators',                url: 'fred.stlouisfed.org' },
       ],
     },
   ];
@@ -1229,25 +1229,30 @@ function Slide17() {
   return (
     <Frame>
       <Chrome n="16" section="REFERENCES / CITATIONS" />
-      <Body>
-        <Title eyebrow="References · 15">Sources &amp; citations.</Title>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, flex: 1, minHeight: 0 }}>
+      <Body topPad={68} botPad={48}>
+        <Title eyebrow="References · 15" style={{ marginBottom: 22 }}>
+          Sources &amp; citations
+          <span style={{ display: 'block', fontSize: 18, fontWeight: 400, fontFamily: FONT_MONO, color: COLORS.textFaint, letterSpacing: '0.04em', marginTop: 10 }}>
+            Every numeric is verified against the linked sources or the backend/src/ codebase.
+          </span>
+        </Title>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, flex: 1, minHeight: 0 }}>
           {refs.map((r, i) => (
             <Card key={r.cat} className={`anim-el anim-fade delay-${i + 1}`} style={{
-              padding: 28, display: 'flex', flexDirection: 'column',
-              borderTop: `3px solid ${r.color}`,
+              padding: '20px 22px', display: 'flex', flexDirection: 'column',
+              borderTop: `3px solid ${r.color}`, minHeight: 0, overflow: 'hidden',
             }}>
-              <div style={{ fontFamily: FONT_MONO, fontSize: 20, color: r.color, letterSpacing: '0.18em', marginBottom: 16 }}>
+              <div style={{ fontFamily: FONT_MONO, fontSize: 17, color: r.color, letterSpacing: '0.18em', marginBottom: 12 }}>
                 {r.cat.toUpperCase()}
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {r.items.map((it) => (
                   <div key={it.label}>
-                    <div style={{ fontSize: 19, color: COLORS.text, lineHeight: 1.3, marginBottom: 4 }}>
+                    <div style={{ fontSize: 16, color: COLORS.text, lineHeight: 1.3, marginBottom: 2 }}>
                       <span style={{ color: r.color, marginRight: 8 }}>▸</span>
                       {it.label}
                     </div>
-                    <div style={{ fontFamily: FONT_MONO, fontSize: 14, color: COLORS.textFaint, paddingLeft: 22 }}>
+                    <div style={{ fontFamily: FONT_MONO, fontSize: 12, color: COLORS.textFaint, paddingLeft: 22 }}>
                       {it.url}
                     </div>
                   </div>
@@ -1256,15 +1261,6 @@ function Slide17() {
             </Card>
           ))}
         </div>
-
-        <Card className="anim-el anim-fade delay-5" style={{
-          marginTop: 16, padding: '16px 28px', flexShrink: 0,
-          border: `1px solid ${COLORS.cyan}`, background: 'rgba(34,211,238,0.05)',
-        }}>
-          <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: COLORS.cyan, letterSpacing: '0.10em', textAlign: 'center' }}>
-            All numerics in this deck are verified against the linked sources or backend/src/ codebase.
-          </div>
-        </Card>
       </Body>
     </Frame>
   );
