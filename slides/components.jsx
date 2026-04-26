@@ -535,7 +535,7 @@ function Slide6() {
       <Chrome n="07" section="SYSTEM / MOAT" />
       <Body>
         <Title eyebrow="Moat · 05">Three things a wrapper cannot copy.</Title>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, flex: 1, minHeight: 0 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, flexShrink: 0 }}>
           {moats.map((m, i) => {
             const IC = m.icon;
             return (
@@ -581,7 +581,7 @@ function Slide6() {
         </div>
 
         <Card className="anim-el anim-fade delay-4" style={{
-          marginTop: 48, padding: '32px 36px', flexShrink: 0,
+          marginTop: 'auto', padding: '28px 36px', flexShrink: 0,
           border: `1px solid ${COLORS.violet}`, background: 'rgba(167,139,250,0.06)',
           display: 'flex', alignItems: 'center', gap: 24,
         }}>
@@ -1233,7 +1233,7 @@ function Slide17() {
         <Title eyebrow="References · 15" style={{ marginBottom: 22 }}>
           Sources &amp; citations
           <span style={{ display: 'block', fontSize: 18, fontWeight: 400, fontFamily: FONT_MONO, color: COLORS.textFaint, letterSpacing: '0.04em', marginTop: 10 }}>
-            Every numeric is verified against the linked sources or the backend/src/ codebase.
+            Every numeric is verified against the linked sources and implemented in our code base.
           </span>
         </Title>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, flex: 1, minHeight: 0 }}>

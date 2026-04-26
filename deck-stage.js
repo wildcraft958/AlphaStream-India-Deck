@@ -672,6 +672,12 @@
           if (i === curr) item.classList.add('active');
           else item.classList.remove('active');
         });
+        const activeItem = this._navItems[curr];
+        if (activeItem && typeof activeItem.scrollIntoView === 'function') {
+          try { activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {
+            try { activeItem.scrollIntoView(false); } catch (e2) {}
+          }
+        }
       }
 
       if (this._countEl) this._countEl.textContent = String(curr + 1);
